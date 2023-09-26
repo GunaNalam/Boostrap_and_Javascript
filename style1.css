@@ -1,0 +1,18 @@
+.nav-link{
+    margin-right: 4rem;
+    color: white;
+    font-size: small;
+}
+
+.background-nav{
+    background: rgb(138, 136, 136);
+}
+
+.background-footer{
+    background-color: rgb(65, 65, 65);
+    color: white;
+}
+
+.height-max{
+    height: 39rem;
+}
