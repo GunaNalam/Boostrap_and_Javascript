@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="task3.js"></script>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="row mt-2">
+            <div class="col-2 text-end">
+                <label>1st Number: </label>
+            </div>
+            <div class="col-5">
+                <div class="form-group mx-auto ">
+                    <input type="number" class="form-control" id="number1" placeholder="Enter the 1st Number"> 
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end">
+                <label>2nd Number: </label>
+            </div>
+            <div class="col-5">
+                <div class="form-group mx-auto">
+                    <input type="number" class="form-control" id="number2" placeholder="Enter the 2nd Number"> 
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="offset-1 col-11 me-2">
+                <button class="btn btn-primary me-3" onclick="multiply()">Multiply</button>
+                <button class="btn btn-primary" onclick="division()">Divide</button>
+            </div>
+            <div class="ms-5 col-12">
+                <div class="ms-5 bg-info mt-5 p-3 border border-dark rounded w-25"  id="display">Result will Appear Here</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

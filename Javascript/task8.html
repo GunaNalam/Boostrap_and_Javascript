@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="task8.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid w-75 bg-info">
+        <div class="row mt-2">
+            <div class="col-12 fw-bold fs-2 my-4 text-center" style="color: rgb(5, 5, 213);">
+                Registration form
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">First Name</div>
+            <div class="col-8">
+                <div class="input-group" >
+                    <input type="text" class="form-control text-start" id="fname" oninput="fnamecheck()" placeholder="Enter first name of min 4 character">
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="first-name" hidden>POOR</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Last Name</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="text" class="form-control text-start" id="lname" oninput="lnamecheck()" placeholder="Enter last name of min 4 character">
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="last-name" hidden>POOR</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Email</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="text" class="form-control text-start" id="email" oninput="emailcheck()" placeholder="Enter a valid E-mail Id">
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="email-check" hidden>POOR</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Password</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="password" class="form-control text-start" id="pass" oninput="passcheck()" placeholder="Enter strong password">
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="pass-check" hidden>POOR</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Re-Enter Password</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="password" class="form-control text-start" id="pass1" oninput="passcheck1()" placeholder="Enter strong password">
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="pass-check1" hidden>MISMATCH</div>
+        </div>
+        
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold mt-3">Gender</div>
+            <div class="col-8">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input text-start" name="gender">
+                    <label class="form-check-label">Male</label>
+                </div>
+                <div class="form-check mt-2">
+                    <input type="radio" class="form-check-input text-start" name="gender">
+                    <label class="form-check-label">Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Age</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="number" class="form-control text-start" id="age-input" oninput="age_check()" placeholder="Enter your Age">
+                </div>
+            </div>
+            <div class="col-2 text-danger" 
+            id="age" hidden>Need to 18+</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Phone Number</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="number" class="form-control text-start" id="phone" oninput="phone_check()" placeholder="Enter your Phone Number">
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="phone-check" hidden>Invalid</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Address</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <textarea name="" id="address" cols="30" rows="2" class="form-control"
+                    oninput="address_check()" placeholder="Enter your Address"></textarea>
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="address-check" hidden>Insufficient</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">State</div>
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="text" class="form-control text-start" required id="state" oninput="state_check()" placeholder="Enter your State">
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="state-check" hidden>Invalid</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Language Known</div>
+            <div class="col-8">
+                <div class="input-check">
+                    <input type="checkbox" class="form-check-input ml-1" id="lang1" onclick="ticked()">
+                    <label for="" class="form-check-label ml-4 mr-2">English</label>
+                    <input type="checkbox" class="form-check-input ml-1" id="lang2" onclick="ticked()">
+                    <label for="" class="form-check-label ml-4 mr-2">Telugu</label>
+                    <input type="checkbox" class="form-check-input ml-1" id="lang3" onclick="ticked()">
+                    <label for="" class="form-check-label ml-4 mr-2">Hindi</label>
+                    <input type="checkbox" class="form-check-input ml-1" id="lang4" onclick="ticked()">
+                    <label for="" class="form-check-label ml-4 mr-2">Tamil</label>
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="lang-check" hidden>POOR</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2 text-end fw-bold">Country</div>
+            <div class="col-8 form-group">
+                <select class="form-select">
+                    <option>Choose your country</option>
+                    <option>India</option>
+                    <option>Sri Lanka</option>
+                    <option>Bangladesh</option>
+                    <option>Pakistan</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4 text-end ml-3">
+                <div class="input-check">
+                    <input type="checkbox" class="form-check-input ml-1" id="checked" onclick="conf_true()">
+                    <label for="" class="form-check-label ml-4 mr-2" >Hereby I declare all the details given are true</label>
+                </div>
+            </div>
+            <div class="col-2 text-danger" id="confirmation" hidden>Required</div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-10 text-end ml-3">
+                Log in to <a href="">Ethnus</a> Website
+            </div>
+        </div>
+        <div class="row mt-2 ">
+            <div class="col-12 text-center mb-4">
+                <button class="btn btn-danger rounded-pill px-4" onclick="register()">REGISTER</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
